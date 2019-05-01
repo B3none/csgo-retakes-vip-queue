@@ -93,7 +93,8 @@ void PQ_Enqueue(Handle queueHandle, int client, int value)
 {
     int index = PQ_FindClient(queueHandle, client);
 
-    if (index == -1) {
+    if (index == -1)
+    {
         index = GetArraySize(queueHandle);
         PushArrayCell(queueHandle, client);
         SetArrayCell(queueHandle, index, client, 0);
