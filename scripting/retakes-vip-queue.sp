@@ -11,9 +11,14 @@ public Plugin myinfo =
 	name = "[Retakes] VIP Queue",
 	author = "B3none",
 	description = "Allow VIP players to take priority in the queue.",
-	version = "1.0.0",
+	version = "1.1.0",
 	url = "https://github.com/b3none"
 };
+
+public void OnPluginStart()
+{
+	LoadTranslations("retakes-vip-queue.phrases");
+}
 
 public void Retakes_OnPreRoundEnqueue(Handle rankingQueue, Handle waitingQueue)
 {
@@ -51,7 +56,7 @@ public void Retakes_OnPreRoundEnqueue(Handle rankingQueue, Handle waitingQueue)
 		
 		ChangeClientTeam(player, 1);
 		
-		PrintToChat(player, "%s You have been moved to spectator because a VIP has taken your spot.", MESSAGE_PREFIX);
+		PrintToChat(player, "%T", player, "Replaced" MESSAGE_PREFIX);
 		
 		RemoveFromArray(array_players, luck);
 		
