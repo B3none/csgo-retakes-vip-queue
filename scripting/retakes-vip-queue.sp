@@ -56,7 +56,7 @@ public void Retakes_OnPreRoundEnqueue(Handle rankingQueue, Handle waitingQueue)
 		
 		ChangeClientTeam(player, 1);
 		
-		PrintToChat(player, "%T", player, "Replaced", MESSAGE_PREFIX);
+		PrintToChat(player, "%T", "Replaced", player, MESSAGE_PREFIX);
 		
 		RemoveFromArray(array_players, luck);
 		
