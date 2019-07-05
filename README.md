@@ -16,4 +16,5 @@ If you appreciate the project then please take the time to star our repository
 
 ## Credits
 Original - Headline
+
 Translation Portuguese-BR & Spanish - [paulo_crash](https://github.com/paulocrash)
