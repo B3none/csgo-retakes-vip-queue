@@ -1,0 +1,8 @@
+"Phrases"
+{
+	"Replaced"
+	{
+		"#format" "{1:s}"
+		"pt" "{1} Você foi colocado de volta na fila de espera porque um VIP tomou seu lugar."
+	}
+}
