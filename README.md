@@ -15,5 +15,5 @@ If you appreciate the project then please take the time to star our repository
 ![Star us](https://github.com/b3none/gdprconsent/raw/development/.github/README_ASSETS/star_us.png)
 
 ## Credits
-- Original - Headline
-- Translation Portuguese-BR & Spanish - [paulo_crash](https://github.com/paulocrash)
+* Original - Headline
+* Translation Portuguese-BR & Spanish - [paulo_crash](https://github.com/paulocrash)
