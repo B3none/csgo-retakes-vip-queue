@@ -1,8 +1,10 @@
 "Phrases"
 {
-  "Replaced"
-  {
-    "#format" "{1:s}"
-    "en" "{1} You have been placed back in the waiting queue because a VIP has taken your spot."
-  }
+	"Replaced"
+	{
+		"#format" "{1:s}"
+		"en" "{1} You have been placed back in the waiting queue because a VIP has taken your spot."
+		"pt" "{1} Você foi colocado de volta na fila de espera porque um VIP tomou seu lugar."
+		"es" "{1} Se le ha vuelto a colocar en la cola de espera porque un VIP ha ocupado su lugar."
+	}
 }
