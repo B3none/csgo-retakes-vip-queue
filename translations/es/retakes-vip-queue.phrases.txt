@@ -1,0 +1,8 @@
+"Phrases"
+{
+	"Replaced"
+	{
+		"#format" "{1:s}"
+		"es" "{1} Se le ha vuelto a colocar en la cola de espera porque un VIP ha ocupado su lugar."
+	}
+}
