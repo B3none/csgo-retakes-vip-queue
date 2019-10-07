@@ -6,22 +6,31 @@
 
 #define MESSAGE_PREFIX "[\x04Retakes\x01]"
 
+ConVar retakesMaxPlayers;
+
 public Plugin myinfo =
 {
 	name = "[Retakes] VIP Queue",
 	author = "B3none",
 	description = "Allow VIP players to take priority in the queue.",
-	version = "1.1.0",
+	version = "1.2.0",
 	url = "https://github.com/b3none"
 };
 
 public void OnPluginStart()
 {
 	LoadTranslations("retakes-vip-queue.phrases");
+	
+	retakesMaxPlayers = FindConVar("sm_retakes_maxplayers");
 }
 
-public void Retakes_OnPreRoundEnqueue(Handle rankingQueue, Handle waitingQueue)
+public void Retakes_OnPreRoundEnqueue(ArrayList rankingQueue, ArrayList waitingQueue)
 {
+	if (retakesMaxPlayers.IntValue > GetArraySize(rankingQueue))
+	{
+		return;
+	}
+	
 	int vip;
 	
 	vip = FindAdminInArray(waitingQueue);
@@ -96,51 +105,51 @@ int FindAdminInArray(Handle waitingQueue)
 
 void PQ_Enqueue(Handle queueHandle, int client, int value)
 {
-    int index = PQ_FindClient(queueHandle, client);
-
-    if (index == -1)
-    {
-        index = GetArraySize(queueHandle);
-        PushArrayCell(queueHandle, client);
-        SetArrayCell(queueHandle, index, client, 0);
-    }
-
-    SetArrayCell(queueHandle, index, value, 1);
+	int index = PQ_FindClient(queueHandle, client);
+	
+	if (index == -1)
+	{
+		index = GetArraySize(queueHandle);
+		PushArrayCell(queueHandle, client);
+		SetArrayCell(queueHandle, index, client, 0);
+	}
+	
+	SetArrayCell(queueHandle, index, value, 1);
 }
 
 int PQ_FindClient(Handle queueHandle, int client)
 {
-    for (int i = 0; i < GetArraySize(queueHandle); i++)
-    {
-        int c = GetArrayCell(queueHandle, i, 0);
-        
-        if (client == c)
-        {
-            return i;
-        }
-    }
-    return -1;
+	for (int i = 0; i < GetArraySize(queueHandle); i++)
+	{
+		int c = GetArrayCell(queueHandle, i, 0);
+		
+		if (client == c)
+		{
+			return i;
+		}
+	}
+	return -1;
 }
 
 void Queue_Enqueue(Handle queueHandle, int client)
 {
-    if (Queue_Find(queueHandle, client) == -1)
-    {
-        PushArrayCell(queueHandle, client);
-    }
+	if (Queue_Find(queueHandle, client) == -1)
+	{
+		PushArrayCell(queueHandle, client);
+	}
 }
 
 int Queue_Find(Handle queueHandle, int client)
 {
-    return FindValueInArray(queueHandle, client);
+	return FindValueInArray(queueHandle, client);
 }
 
 void Queue_Drop(Handle queueHandle, int client)
 {
-    int index = Queue_Find(queueHandle, client);
-    
-    if (index != -1)
-    {
-        RemoveFromArray(queueHandle, index);
-    }
+	int index = Queue_Find(queueHandle, client);
+	
+	if (index != -1)
+	{
+		RemoveFromArray(queueHandle, index);
+	}
 }
