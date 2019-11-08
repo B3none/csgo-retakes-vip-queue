@@ -20,7 +20,10 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	LoadTranslations("retakes-vip-queue.phrases");
-	
+}
+
+public void OnAllPluginsLoaded()
+{
 	retakesMaxPlayers = FindConVar("sm_retakes_maxplayers");
 }
 
