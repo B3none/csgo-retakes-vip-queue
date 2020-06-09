@@ -29,6 +29,9 @@ public void OnAllPluginsLoaded()
 
 public void Retakes_OnPreRoundEnqueue(ArrayList rankingQueue, ArrayList waitingQueue)
 {
+	PrintToServer("retakesMaxPlayers: %i", retakesMaxPlayers.IntValue);
+	PrintToServer("rankingQueue: %i", GetArraySize(rankingQueue));
+	
 	if (retakesMaxPlayers.IntValue > GetArraySize(rankingQueue))
 	{
 		return;
