@@ -1,0 +1,8 @@
+"Phrases"
+{
+	"Replaced"
+	{
+		"#format" "{1:s}"
+		"fr" "{1} Vous avez été remis dans la fiel d'attente car un VIP a pris votre place."
+	}
+}
