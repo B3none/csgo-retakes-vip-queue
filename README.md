@@ -1,6 +1,11 @@
 # Retakes VIP Queue
 Retakes queue priority for VIP players
 
+# Instructions
+Change the VIP flag required by editing csgo/addons/sourcemod/configs/admin_override.cfg
+There, add this line `"skip_queue"	"<VIP_Flag>"` and replace `<VIP_Flag>` with the required flag.
+A list of flag is available [here](https://wiki.alliedmods.net/Adding_Admins_(SourceMod)#Levels).
+
 # Authors
 Alex Blackham - Developer and Maintainer - [B3none](https://b3none.co.uk/)
 
