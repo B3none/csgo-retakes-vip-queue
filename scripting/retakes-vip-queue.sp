@@ -29,11 +29,6 @@ public void OnAllPluginsLoaded()
 
 public void Retakes_OnPreRoundEnqueue(ArrayList rankingQueue, ArrayList waitingQueue)
 {
-	if (retakesMaxPlayers.IntValue > GetArraySize(rankingQueue))
-	{
-		return;
-	}
-	
 	int vip;
 	
 	vip = FindAdminInArray(waitingQueue);
