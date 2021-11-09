@@ -11,7 +11,7 @@ public Plugin myinfo =
 	name = "[Retakes] VIP Queue",
 	author = "B3none",
 	description = "Allow VIP players to take priority in the queue.",
-	version = "1.2.1",
+	version = "1.2.2",
 	url = "https://github.com/b3none"
 };
 
