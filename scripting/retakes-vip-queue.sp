@@ -6,8 +6,6 @@
 
 #define MESSAGE_PREFIX "[\x04Retakes\x01]"
 
-ConVar retakesMaxPlayers;
-
 public Plugin myinfo =
 {
 	name = "[Retakes] VIP Queue",
@@ -20,11 +18,6 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	LoadTranslations("retakes-vip-queue.phrases");
-}
-
-public void OnAllPluginsLoaded()
-{
-	retakesMaxPlayers = FindConVar("sm_retakes_maxplayers");
 }
 
 public void Retakes_OnPreRoundEnqueue(ArrayList rankingQueue, ArrayList waitingQueue)
